@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Настройки для того, чтобы подвал прижимался к низу экрана */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #FFF5EE;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; /* Выстраивает шапку, контент и подвал вертикально */
+}
+
+/* ФИКСИРОВАННАЯ ШАПКА — УВЕЛИЧЕНА ШИРИНА/ВЫСОТА ПОЛОСЫ */
+header {
+    background-color: #FF7F50;
+    padding: 22px 20px; /* Увеличены внутренние отступы, шапка стала выше */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 20px; /* Немного увеличен размер шрифта логотипа */
+}
+
+.menu-toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px; /* Иконка меню стала крупнее и удобнее для нажатия */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Боковая панель */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: #FF8C00;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    float: right;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-menu button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 14px; /* Увеличена высота кнопок внутри меню */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nav-menu button:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* КОНТЕНТНАЯ ЗОНА — СМЕЩЕНА ЕЩЕ ЧУТЬ НИЖЕ */
+.container {
+    padding: 12px; /* Уменьшены боковые отступы, чтобы контенту было просторнее */
+    text-align: center;
+    margin-top: 55px; /* Контент опустился еще ниже к центру экрана */
+    flex: 1 0 auto;  /* Толкает футер вниз */
+}
+
+#page-title {
+    font-size: 26px; /* Заголовок стал чуть крупнее */
+    color: #CC5500;
+    margin-bottom: 28px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* УВЕЛИЧЕНО ВИДЕО И ФОТО */
+img, video {
+    width: 100%;
+    max-width: 100%; /* Занимает всю ширину мобильного экрана внутри контейнера */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.pdf-link {
+    display: block;
+    margin: 28px auto 0 auto;
+    padding: 16px; /* Кнопка PDF стала немного больше */
+    background-color: #FF4500;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.35);
+}
+
+.pdf-link:active {
+    background-color: #CD3700;
+}
+
+/* Заглушка для главного фото тоже увеличена */
+.image-placeholder {
+    width: 100%;
+    height: 250px; /* Увеличена высота заглушки */
+    background: linear-gradient(135deg, #FF8C00, #FF4500);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* ПОДВАЛ (ФУТЕР) — УВЕЛИЧЕН */
+footer {
+    background-color: #222222;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 24px 20px; /* Увеличены отступы, подвал стал солиднее и выше */
+    font-size: 13px; /* Шрифт стал немного больше и читабельнее */
+    flex-shrink: 0;
+    margin-top: 50px;
+    line-height: 1.6;
+}
