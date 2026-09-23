@@ -30,10 +30,13 @@ header {
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
+/* СТИЛЬ ДЛЯ КЛИКАБЕЛЬНОГО ЛОГОТИПА */
 .logo {
     color: white;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer; /* Делает текст похожим на ссылку при наведении */
+    user-select: none; /* Убирает случайное выделение текста синим на телефонах */
 }
 
 .menu-toggle-btn {
@@ -119,7 +122,7 @@ header {
 .container {
     padding: 0 12px;
     text-align: center;
-    margin-top: 35px; /* Умеренный отступ сверху */
+    margin-top: 35px;
     flex: 1 0 auto;  
 }
 
@@ -143,10 +146,10 @@ img, video {
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
-/* КНОПКА PDF ВЕРНУЛАСЬ НАВЕРХ — теперь она аккуратно под видео */
+/* Кнопка PDF под видео */
 .pdf-link {
     display: block;
-    margin: 25px auto 0 auto; /* Небольшой отступ в 25 пикселей от видео */
+    margin: 25px auto 0 auto; 
     padding: 16px;
     background-color: #FF4500;
     color: white;
@@ -175,7 +178,7 @@ img, video {
     padding: 20px;
 }
 
-/* ПОДВАЛ СПРЯТАН ЗА ПРЕДЕЛЫ ПЕРВОГО ЭКРАНА С ПОМОЩЬЮ ВЕРТИКАЛЬНОГО ОТСТУПА */
+/* НОВЫЙ НАДЕЖНЫЙ ПОДВАЛ, КОТОРЫЙ СКРЫВАЕТСЯ НА ЛЮБОМ СМАРТФОНЕ */
 footer {
     background-color: #222222;
     color: #aaaaaa;
@@ -184,6 +187,9 @@ footer {
     font-size: 13px;
     line-height: 1.6;
     flex-shrink: 0;
-    margin-top: 35vh; /* Отталкивает подвал ровно на треть экрана вниз от кнопки PDF, скрывая его при входе */
+    
+    /* Секретный отступ: отодвигает подвал на 300 пикселей вниз за пределы экрана телефона, 
+       чтобы его гарантированно не было видно при первой загрузке без скролла */
+    margin-top: 300px; 
 }
 
