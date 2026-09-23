@@ -18,10 +18,10 @@ body {
     flex-direction: column; /* Выстраивает шапку, контент и подвал вертикально */
 }
 
-/* ФИКСИРОВАННАЯ ШАПКА — УВЕЛИЧЕНА ШИРИНА/ВЫСОТА ПОЛОСЫ */
+/* Фиксированная шапка */
 header {
     background-color: #FF7F50;
-    padding: 22px 20px; /* Увеличены внутренние отступы, шапка стала выше */
+    padding: 22px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,14 +34,14 @@ header {
 .logo {
     color: white;
     font-weight: bold;
-    font-size: 20px; /* Немного увеличен размер шрифта логотипа */
+    font-size: 20px;
 }
 
 .menu-toggle-btn {
     background: none;
     border: none;
     color: white;
-    font-size: 32px; /* Иконка меню стала крупнее и удобнее для нажатия */
+    font-size: 32px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -88,7 +88,7 @@ header {
     background-color: rgba(255, 255, 255, 0.15);
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    padding: 14px; /* Увеличена высота кнопок внутри меню */
+    padding: 14px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
@@ -116,16 +116,16 @@ header {
     display: block;
 }
 
-/* КОНТЕНТНАЯ ЗОНА — СМЕЩЕНА ЕЩЕ ЧУТЬ НИЖЕ */
+/* Контентная зона */
 .container {
-    padding: 12px; /* Уменьшены боковые отступы, чтобы контенту было просторнее */
+    padding: 0 12px; /* Убрали лишние вертикальные отступы внутри */
     text-align: center;
-    margin-top: 55px; /* Контент опустился еще ниже к центру экрана */
-    flex: 1 0 auto;  /* Толкает футер вниз */
+    margin-top: 50px;
+    flex: 1 0 auto;  /* Направляет подвал вниз */
 }
 
 #page-title {
-    font-size: 26px; /* Заголовок стал чуть крупнее */
+    font-size: 26px;
     color: #CC5500;
     margin-bottom: 28px;
 }
@@ -134,19 +134,21 @@ header {
     display: none;
 }
 
-/* УВЕЛИЧЕНО ВИДЕО И ФОТО */
+/* ЕСТЕСТВЕННЫЙ РАЗМЕР И ШИРИНА ВИДЕО (КИНЕМАТОГРАФИЧНЫЙ ФОРМАТ) */
 img, video {
     width: 100%;
-    max-width: 100%; /* Занимает всю ширину мобильного экрана внутри контейнера */
-    height: auto;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* Задает идеальные пропорции 16:9, видео больше не растягивается */
+    object-fit: cover;    /* Аккуратно вписывает видео без черных полос по бокам */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
+/* КНОПКА PDF ОПУЩЕНА НИЖЕ ЗА ПРЕДЕЛЫ ПЕРВОГО ЭКРАНА */
 .pdf-link {
     display: block;
-    margin: 28px auto 0 auto;
-    padding: 16px; /* Кнопка PDF стала немного больше */
+    margin: 120px auto 0 auto; /* Увеличен отступ сверху до 120px, чтобы кнопка ушла вниз */
+    padding: 16px;
     background-color: #FF4500;
     color: white;
     text-decoration: none;
@@ -160,10 +162,10 @@ img, video {
     background-color: #CD3700;
 }
 
-/* Заглушка для главного фото тоже увеличена */
+/* Заглушка для главного фото тоже приведена к формату 16:9 */
 .image-placeholder {
     width: 100%;
-    height: 250px; /* Увеличена высота заглушки */
+    aspect-ratio: 16 / 9;
     background: linear-gradient(135deg, #FF8C00, #FF4500);
     color: white;
     display: flex;
@@ -175,14 +177,15 @@ img, video {
     padding: 20px;
 }
 
-/* ПОДВАЛ (ФУТЕР) — УВЕЛИЧЕН */
+/* УВЕЛИЧЕННЫЙ ПОДВАЛ, КОТОРЫЙ ВИДЕН ТОЛЬКО ПРИ ПРОКРУТКЕ */
 footer {
     background-color: #222222;
     color: #aaaaaa;
     text-align: center;
-    padding: 24px 20px; /* Увеличены отступы, подвал стал солиднее и выше */
-    font-size: 13px; /* Шрифт стал немного больше и читабельнее */
-    flex-shrink: 0;
-    margin-top: 50px;
+    padding: 35px 20px; /* Еще больше увеличили высоту подвала */
+    font-size: 13px;
     line-height: 1.6;
+    flex-shrink: 0;
+    margin-top: 150px; /* Огромный отступ сверху, гарантирующий скрытие подвала при входе */
 }
+
