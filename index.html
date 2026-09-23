@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<!-- Шапка сайта -->
+<!-- Шапка сайта с кликабельным логотипом -->
 <header>
-    <div class="logo">Мой Сайт</div>
+    <div class="logo" onclick="selectPage('main', 'Главная страница')">Мой Сайт</div>
     <button class="menu-toggle-btn" onclick="toggleMenu()" aria-label="Открыть меню">☰</button>
 </header>
 
@@ -37,7 +37,7 @@
     </ul>
 </nav>
 
-<!-- Контентная зона (смещена ниже) -->
+<!-- Контентная зона -->
 <div class="container">
     <h1 id="page-title">Главная страница</h1>
 
@@ -67,13 +67,17 @@
 </footer>
 
 <script>
+    // Проверяем, открыто ли меню перед переключением страницы
     function toggleMenu() {
         document.getElementById('sideMenu').classList.toggle('open');
         document.getElementById('menuOverlay').classList.toggle('active');
     }
 
     function selectPage(pageId, pageTitle) {
-        toggleMenu();
+        // Закрываем меню, если оно было открыто
+        document.getElementById('sideMenu').classList.remove('open');
+        document.getElementById('menuOverlay').classList.remove('active');
+        
         const pages = document.querySelectorAll('.page-content');
         pages.forEach(page => {
             page.classList.add('hidden');
