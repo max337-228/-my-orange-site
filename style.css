@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-/* Настройки для того, чтобы подвал прижимался к низу экрана */
 html, body {
     height: 100%;
 }
@@ -15,7 +14,7 @@ body {
     color: #333;
     overflow-x: hidden;
     display: flex;
-    flex-direction: column; /* Выстраивает шапку, контент и подвал вертикально */
+    flex-direction: column; 
 }
 
 /* Фиксированная шапка */
@@ -118,36 +117,36 @@ header {
 
 /* Контентная зона */
 .container {
-    padding: 0 12px; /* Убрали лишние вертикальные отступы внутри */
+    padding: 0 12px;
     text-align: center;
-    margin-top: 50px;
-    flex: 1 0 auto;  /* Направляет подвал вниз */
+    margin-top: 35px; /* Умеренный отступ сверху */
+    flex: 1 0 auto;  
 }
 
 #page-title {
     font-size: 26px;
     color: #CC5500;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .hidden {
     display: none;
 }
 
-/* ЕСТЕСТВЕННЫЙ РАЗМЕР И ШИРИНА ВИДЕО (КИНЕМАТОГРАФИЧНЫЙ ФОРМАТ) */
+/* Видео и фото формата 16:9 */
 img, video {
     width: 100%;
     max-width: 100%;
-    aspect-ratio: 16 / 9; /* Задает идеальные пропорции 16:9, видео больше не растягивается */
-    object-fit: cover;    /* Аккуратно вписывает видео без черных полос по бокам */
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;    
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
-/* КНОПКА PDF ОПУЩЕНА НИЖЕ ЗА ПРЕДЕЛЫ ПЕРВОГО ЭКРАНА */
+/* КНОПКА PDF ВЕРНУЛАСЬ НАВЕРХ — теперь она аккуратно под видео */
 .pdf-link {
     display: block;
-    margin: 120px auto 0 auto; /* Увеличен отступ сверху до 120px, чтобы кнопка ушла вниз */
+    margin: 25px auto 0 auto; /* Небольшой отступ в 25 пикселей от видео */
     padding: 16px;
     background-color: #FF4500;
     color: white;
@@ -162,7 +161,6 @@ img, video {
     background-color: #CD3700;
 }
 
-/* Заглушка для главного фото тоже приведена к формату 16:9 */
 .image-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -177,15 +175,15 @@ img, video {
     padding: 20px;
 }
 
-/* УВЕЛИЧЕННЫЙ ПОДВАЛ, КОТОРЫЙ ВИДЕН ТОЛЬКО ПРИ ПРОКРУТКЕ */
+/* ПОДВАЛ СПРЯТАН ЗА ПРЕДЕЛЫ ПЕРВОГО ЭКРАНА С ПОМОЩЬЮ ВЕРТИКАЛЬНОГО ОТСТУПА */
 footer {
     background-color: #222222;
     color: #aaaaaa;
     text-align: center;
-    padding: 35px 20px; /* Еще больше увеличили высоту подвала */
+    padding: 40px 20px; 
     font-size: 13px;
     line-height: 1.6;
     flex-shrink: 0;
-    margin-top: 150px; /* Огромный отступ сверху, гарантирующий скрытие подвала при входе */
+    margin-top: 35vh; /* Отталкивает подвал ровно на треть экрана вниз от кнопки PDF, скрывая его при входе */
 }
 
