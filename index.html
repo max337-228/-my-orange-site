@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой новый музей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="header">
+        <div class="container header__wrap">
+            <div class="header__logo">
+                <span class="logo-text">МУЗЕЙ</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content__wrap">
+
+        <!-- ГЛАВНЫЙ БАННЕР (С картинкой 0.jpg на фоне) -->
+        <section class="hero-banner">
+            <div class="banner-bg" style="background-image: url('pfoto/0.jpg');">
+                <div class="container hero-banner__wrap">
+                    <!-- Если текст поверх картинки не нужен, оставляем пустым -->
+                    <h1 class="hero-banner__title"></h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- НАПРАВЛЕНИЯ С КАРУСЕЛЬЮ И СТРЕЛКАМИ -->
+        <section class="directions">
+            <div class="container relative-container">
+                <h2 class="page-title--2">Наши Выставки</h2>
+
+                <!-- Стрелки навигации для ПК -->
+                <button class="nav-arrow prev-arrow" id="prevBtn" aria-label="Назад"><span></span></button>
+                <button class="nav-arrow next-arrow" id="nextBtn" aria-label="Вперед"><span></span></button>
+
+                <div class="slider-container" id="sliderContainer">
+                    <div class="directions__slider">
+
+                        <!-- Блок из первых 6 выставок (Страница 1) -->
+                        <div class="slider-page">
+                            <!-- Выставка 1 -->
+                            <a href="exhibit-page.html?id=1" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/1.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 1</h3>
+                                        <p class="item__text">ПРОЛОГ от Домостроя до легальной самореализации.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 2 -->
+                            <a href="exhibit-page.html?id=2" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/2.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 2</h3>
+                                        <p class="item__text">Зарождение идеи. Мир на рубеже веков.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 3 (Полностью рабочая!) -->
+                            <a href="exhibit-page.html?id=3" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/3.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 3</h3>
+                                        <p class="item__text">Российская империя. Потешные полки.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 4 -->
+                            <a href="exhibit-page.html?id=4" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/4.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 4</h3>
+                                        <p class="item__text">Дореволюционные кружки Казани.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 5 -->
+                            <a href="exhibit-page.html?id=5" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/5.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 5</h3>
+                                        <p class="item__text">Ранние общества юных казанцев.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 6 -->
+                            <a href="exhibit-page.html?id=6" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/6.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 6</h3>
+                                        <p class="item__text">Советская эпоха. Начало_.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Блок из следующих 6 выставок (Страница 2) -->
+                        <div class="slider-page">
+                            <!-- Выставка 7 -->
+                            <a href="exhibit-page.html?id=7" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/7.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 7</h3>
+                                        <p class="item__text">Советская эпоха. Годы ВОВ и оттепель.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 8 -->
+                            <a href="exhibit-page.html?id=8" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/8.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 8</h3>
+                                        <p class="item__text">Застой и перестройка..</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 9 -->
+                            <a href="exhibit-page.html?id=9" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/9.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 9</h3>
+                                        <p class="item__text">Эпоха возрождения и новых смыслов.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 10 -->
+                            <a href="exhibit-page.html?id=10" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/10.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 10</h3>
+                                        <p class="item__text">Юнармия.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 11 -->
+                            <a href="exhibit-page.html?id=11" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/11.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 11</h3>
+                                        <p class="item__text">Движение первых.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Выставка 12 -->
+                            <a href="exhibit-page.html?id=12" class="directions__item item">
+                                <div class="item__inner">
+                                    <div class="item__bg" style="background-image: url('pfoto/12.jpg');"></div>
+                                    <div class="item__more">
+                                        <h3 class="item__title">Выставка 12</h3>
+                                        <p class="item__text">Юдино.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+<script>
+    const container = document.getElementById('sliderContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Функция точного вычисления ширины одной страницы слайдера
+    function getPageWidth() {
+        const page = container.querySelector('.slider-page');
+        return page ? page.getBoundingClientRect().width : container.offsetWidth;
+    }
+
+    // Листание вперед
+    nextBtn.addEventListener('click', () => {
+        container.scrollBy({
+            left: getPageWidth(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Листание назад
+    prevBtn.addEventListener('click', () => {
+        container.scrollBy({
+            left: -getPageWidth(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Слежка за прокруткой для скрытия/включения стрелок
+    container.addEventListener('scroll', () => {
+        const currentScroll = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+
+        // Погрешность в 5 пикселей для разных браузеров
+        if (currentScroll <= 5) {
+            prevBtn.style.opacity = '0.3';
+            prevBtn.style.pointerEvents = 'none';
+        } else {
+            prevBtn.style.opacity = '1';
+            prevBtn.style.pointerEvents = 'auto';
+        }
+
+        if (currentScroll >= maxScroll - 5) {
+            nextBtn.style.opacity = '0.3';
+            nextBtn.style.pointerEvents = 'none';
+        } else {
+            nextBtn.style.opacity = '1';
+            nextBtn.style.pointerEvents = 'auto';
+        }
+    });
+
+    // Начальное состояние при первой загрузке страницы
+    prevBtn.style.opacity = '0.3';
+    prevBtn.style.pointerEvents = 'none';
+</script>
