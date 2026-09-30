@@ -1,0 +1,402 @@
+/* ОБЩИЕ СТИЛИ И СБРОС */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #ffffff;
+    color: #333333;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 117rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.relative-container {
+    position: relative;
+}
+
+/* ФОТО-ЗАГЛУШКА ДЛЯ БАННЕРА */
+.image-placeholder {
+    background-color: #5d9cec !important;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ЗАГОЛОВКИ */
+.page-title--2 {
+    font-size: 3.6rem;
+    line-height: 4rem;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* ШАПКА */
+/* ШАПКА С ГОЛУБОЙ ПОЛОСКОЙ СВЕРХУ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    /* Верхняя голубая полоса толщиной 4 пикселя */
+    border-top: 4px solid #5d9cec;
+    box-shadow: 0 1rem 2rem -1.5rem rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.header__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+/* СТИЛИЗАЦИЯ ТЕКСТОВОГО ЛОГОТИПА */
+.logo-text {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #024b7b; /* Темно-синий цвет букв */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.content__wrap {
+    flex: 1 0 auto;
+    padding-top: 7.4rem; /* Немного увеличили отступ под шапку с учетом полоски */
+}
+
+/* ГЛАВНЫЙ БАННЕР С УМНЫМ МАСШТАБИРОВАНИЕМ */
+.hero-banner {
+    width: 100%;
+    background-color: #ffffff; /* Белый фон по бокам, если экран слишком широкий */
+}
+
+.banner-bg {
+    width: 100%;
+    height: 600px; /* Та же фиксированная высота, что была у синего квадрата */
+    background-size: contain;    /* Картинка масштабируется полностью, БЕЗ ОБРЕЗАНИЯ */
+    background-position: center; /* Центрируем картинку на экране */
+    background-repeat: no-repeat;
+}
+
+.hero-banner__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-banner__title {
+    display: none; /* Полностью скрываем текст, чтобы он не мешал картинке */
+}
+
+/* Адаптивность для мобильных телефонов (чтобы баннер становился ниже и пропорции не ломались) */
+@media (max-width: 768px) {
+    .banner-bg {
+        height: 360px;
+    }
+}
+@media (max-width: 480px) {
+    .banner-bg {
+        height: 290px;
+    }
+}
+
+
+/* СТИЛИ КАРУСЕЛИ И СЕТКИ ВЫСТАВОК */
+.slider-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.directions__slider {
+    display: flex;
+    width: 200%;
+}
+
+.slider-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    width: 50%;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    padding: 1rem 0.5rem;
+}
+
+.directions__item.item {
+    text-decoration: none;
+    display: block;
+}
+
+.item__inner {
+    background: #024b7b;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.item__inner:hover {
+    transform: translateY(-5px);
+}
+
+.item__bg {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5d9cec;
+}
+
+.item__more {
+    background: #ffffff;
+    color: #ac1404;
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.item__title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.item__text {
+    color: #333333;
+    font-size: 1.4rem;
+}
+
+.slider-hint {
+    text-align: center;
+    color: #999999;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* СТИЛИ СТРЕЛОК УПРАВЛЕНИЯ */
+.nav-arrow {
+    display: block;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 5rem;
+    background: #ac1404;
+    border: none;
+    z-index: 10;
+    box-shadow: 0 0.4rem 1rem 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.nav-arrow:hover {
+    background: #7c0e02;
+}
+
+.prev-arrow {
+    border-radius: 0 1rem 1rem 0;
+    left: 0;
+}
+
+.prev-arrow span {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    width: 12px;
+    height: 12px;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    transform: rotate(45deg);
+}
+
+.next-arrow {
+    border-radius: 1rem 0 0 1rem;
+    right: 0;
+}
+
+.next-arrow span {
+    position: absolute;
+    top: 35%;
+    right: 40%;
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid #ffffff;
+    border-top: 3px solid #ffffff;
+    transform: rotate(45deg);
+}
+
+/* О МУЗЕЕ */
+.about {
+    padding: 7rem 0;
+    background: #ffffff;
+}
+
+.about__text p {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    text-align: justify;
+}
+
+/* ВНУТРЕННЯЯ СТРАНИЦА ВЫСТАВКИ */
+.exhibit-detail {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    background-color: #5d9cec;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.exhibit-video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 1.2rem 5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.btn-open {
+    background-color: #024b7b;
+    color: #ffffff;
+}
+
+.btn-open:hover {
+    background-color: #013354;
+}
+
+/* ПОДВАТ */
+.footer__bottom {
+    background: #f5f5f5;
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    margin-top: auto;
+}
+
+.footer__bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copyright a {
+    color: #ac1403;
+    text-decoration: none;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 992px) {
+    .slider-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner__title {
+        font-size: 3.2rem;
+    }
+
+    .nav-arrow {
+        display: none !important;
+    }
+
+    .slider-page {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        gap: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer__bottom .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+/* СТИЛИ АНИМАЦИИ ДЛЯ БЕСКОНЕЧНОЙ ЗАГРУЗКИ */
+.sitepro-loader {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+.sitepro-loader-svg {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    animation: sitepro-loader-rotate 1.8s linear infinite;
+}
+.sitepro-loader-circle {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: sitepro-loader-dash 1.2s ease-in-out infinite;
+}
+@keyframes sitepro-loader-rotate {
+    to { transform: rotate(360deg); }
+}
+@keyframes sitepro-loader-dash {
+    0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+    100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+}

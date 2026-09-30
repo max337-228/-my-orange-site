@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница выставки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__wrap">
+            <div class="header__logo">
+                <span class="logo-text">МУЗЕЙ</span>
+            </div>
+            <div>
+                <a href="index.html" class="btn-back">← На главную</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="content__wrap exhibit-detail">
+        <div class="container">
+            <h1 class="page-title--2" id="exhibitTitle">Загрузка выставки...</h1>
+
+            <div class="video-container">
+                <video controls class="exhibit-video" id="exhibitVideo">
+                    <source src="" type="video/mp4" id="videoSource">
+                    Ваш браузер не поддерживает встроенные видео.
+                </video>
+            </div>
+
+            <div class="action-buttons">
+                <a href="#" target="_blank" class="btn-action btn-open" id="pdfLink">Открыть PDF</a>
+            </div>
+
+            <div class="about__text text">
+                <p id="exhibitDescription">Здесь располагается подробное текстовое описание выбранной экспозиции.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__copyright">&copy; 2026 <a href="index.html">Музей</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const exhibitId = urlParams.get('id') || '1';
+
+        // База точных названий документов из вашей папки PDF строго по скриншоту
+        const exhibitFiles = {
+            "1": "1 от Домостроя до легальной самореализации",
+            "2": "2. _ Зарождение идеи. Мир на рубеже веков",
+            "3": "3. _ Российская империя. До официального детского движения. Потешные полки",
+            "4": "4. _ Дореволюционные кружки Казани",
+            "5": "5. _ Ранние общества юных казанцев",
+            "6": "6. _ Советская эпоха. Начало",
+            "7": "7. _ Советская эпоха. Годы ВОВ и оттепель",
+            "8": "8. _ Застой и перестройка",
+            "9": "9. _ Эпоха возрождения и новых смыслов",
+            "10": "10. _ Юнармия",
+            "11": "11. _ Движение первых",
+            "12": "12. _ Юдино"
+        };
+
+        const currentFileName = exhibitFiles[exhibitId] || `${exhibitId}. _ Выставка`;
+
+        // Форматируем заголовок для красивого вывода пользователю
+        let cleanTitle = currentFileName.replace(/^\d+\s*от\s*/, 'От ');
+        cleanTitle = cleanTitle.replace(/^\d+\.\s*_\s*/, '');
+
+        document.getElementById('exhibitTitle').innerText = `Выставка №${exhibitId} — ${cleanTitle}`;
+        document.getElementById('exhibitDescription').innerText = `Вы просматриваете архивные документы и видеоматериалы экспозиции "${cleanTitle}".`;
+
+        const videoElement = document.getElementById('exhibitVideo');
+        const sourceElement = document.getElementById('videoSource');
+        const pdfLink = document.getElementById('pdfLink');
+
+        // Путь к видео
+        sourceElement.src = `videos/video-${exhibitId}.mp4`;
+
+        // Направление ссылки на точное физическое имя файла в папке PDF
+        pdfLink.href = `PDF/${currentFileName}.pdf`;
+
+        videoElement.load();
+    </script>
+</body>
+</html>
