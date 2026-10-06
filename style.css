@@ -5,6 +5,18 @@
     padding: 0;
 }
 
+.header__wrap {
+    display: flex;            /* Включаем Flexbox */
+    justify-content: space-between; /* Выравниваем элементы по краям (лево / право) */
+    align-items: center;      /* Выравниваем элементы по вертикали по центру */
+}
+
+/* Опциональные настройки для картинки */
+.header__image {
+    max-height: 75px;         /* Ограничиваем картинку по высоте, чтобы она не растягивала шапку */
+    width: auto;              /* Сохраняем пропорции изображения */
+    object-fit: contain;      /* Защищаем от деформации */
+}
 html {
     font-size: 10px;
 }
